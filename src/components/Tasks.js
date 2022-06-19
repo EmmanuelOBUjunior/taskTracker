@@ -1,4 +1,4 @@
-const task = [
+const tasks = [
 	{
 		id: 1,
 		text : "Doctor's Appointment",
@@ -18,9 +18,14 @@ const task = [
 		remainder: false,
 	}
 ]
+
 const Tasks = () => {
   return (
-	<div>Tasks</div>
+	<>
+		{tasks.map((task) =>(
+			<h3>{task.title}</h3>
+		))}
+	</>
   )
 }
 
