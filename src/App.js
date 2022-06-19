@@ -27,8 +27,8 @@ function App() {
 
 
      //FETCH TASK
-     const fetchTask = async () =>{
-      const res = await fetch('http://localhost:5000/tasks')
+     const fetchTask = async (id) =>{
+      const res = await fetch(`http://localhost:5000/tasks/${id}`)
       const data = await res.json()
       
       //console.log(data)
@@ -74,12 +74,12 @@ function App() {
         headers:{
           'Content-type': 'application/json'
         },
-        body: JSON.stringify(id)
+        body: JSON.stringify(updTask)
       })
 
-      const data = res.json(updTask)
+      const data = await res.json()
 
-      setTasks(tasks.map((task) => task.id === id ?{...task, reminder: !data.reminder} : task ))
+      setTasks(tasks.map((task) => task.id === id ?{...task, reminder: data.reminder} : task ))
     }
 
   return (
