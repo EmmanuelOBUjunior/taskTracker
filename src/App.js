@@ -46,8 +46,8 @@ function App() {
 
   return (
     <div className="container">
-     <Header/>
-     {showAddTasks && <AddTask onAddTask = {addTask} showAddTask = {showAddTasks}/>}
+     <Header  onAdd = {() => setShowAddTasks(!showAddTasks)} showAdd = {showAddTasks}/>
+     {showAddTasks && <AddTask onAddTask = {addTask}/>}
      {tasks.length > 0 ? <Tasks tasks = {tasks} onDelete = {deleteTask} onToggle= {toggleTask}/> : <h3>There is no task to show</h3>}
     </div>
   );
