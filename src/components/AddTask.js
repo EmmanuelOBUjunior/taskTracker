@@ -7,8 +7,13 @@ const AddTask = (onAddTask) => {
 
 	const onSubmit = () =>{
 		if(!text){
-			alert("Please fill in the Task input")
+			alert("Please fill in the Task inputs")
 		}
+
+		onAddTask(text, day, reminder)
+		setText('')
+		setDay('')
+		setReminder(false)
 	}
   return (
 	<form onSubmit={onSubmit}>
