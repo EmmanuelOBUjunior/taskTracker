@@ -8,13 +8,13 @@ function App() {
         id: 1,
         text : "Doctor's Appointment",
         day : "Feb 5th at 2:30pm",
-        remainder: true
+        reminder: true
       },
       {
         id: 2,
         text : "Meeting at School",
         day : "Feb 6th at 1:30pm",
-        remainder: true
+        reminder: true
       },
       {
         id: 3,
@@ -26,12 +26,13 @@ function App() {
 
     //DELETE TASK
     const deleteTask = (id) =>{
-      setTasks(tasks.filter((task) => task.id !== id))
+     setTasks(tasks.filter((task) => task.id !== id))
     }
 
     //TOGGLE TASK
     const toggleTask = (id) =>{
-      setTasks(tasks.map((task) => task.id === id ?{...task, reminder: !task.reminder} : tasks ))
+      // console.log(id)
+      setTasks(tasks.map((task) => task.id === id ?{...task, reminder: !task.reminder} : task ))
     }
 
   return (
