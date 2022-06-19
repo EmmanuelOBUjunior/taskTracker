@@ -2,6 +2,8 @@ import { useState , useEffect} from 'react';
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
+import Footer from './components/Footer'
+import About from './components/About'
 
 function App() {
   const [showAddTasks, setShowAddTasks] = useState(false)
@@ -87,6 +89,7 @@ function App() {
      <Header  onAdd = {() => setShowAddTasks(!showAddTasks)} showAdd = {showAddTasks}/>
      {showAddTasks && <AddTask onAddTask = {addTask}/>}
      {tasks.length > 0 ? <Tasks tasks = {tasks} onDelete = {deleteTask} onToggle= {toggleTask}/> : <h3>There is no task to show</h3>}
+     <Footer/>
     </div>
   );
 }
