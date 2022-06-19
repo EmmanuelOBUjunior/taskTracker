@@ -1,5 +1,5 @@
 import { useState , useEffect} from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
@@ -95,7 +95,7 @@ function App() {
       {showAddTasks && <AddTask onAddTask = {addTask}/>}
       {tasks.length > 0 ? <Tasks tasks = {tasks} onDelete = {deleteTask} onToggle= {toggleTask}/> : <h3>There is no task to show</h3>}
       </>}/>
-      <Route path = 'about' element = {<About/>}/>
+      <Route path = '/about' element = {<About/>}/>
       </Routes>
      <Footer/>
     
