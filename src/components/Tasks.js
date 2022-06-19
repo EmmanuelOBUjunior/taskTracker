@@ -1,4 +1,4 @@
-const Tasks = () => {
+const Tasks = ({tasks}) => {
   return (
 	<>
 		{tasks.map((task) =>(
