@@ -3,7 +3,7 @@ import Header from './components/Header'
 import Tasks from './components/Tasks'
 
 function App() {
-  const [tasks, setTask] = useState([
+  const [tasks, setTasks] = useState([
       {
         id: 1,
         text : "Doctor's Appointment",
@@ -26,7 +26,7 @@ function App() {
 
     //Delete Task
     const deleteTask = (id) =>{
-      console.log("Deleted task with id", id);
+      setTasks(tasks.filer((task) => task.id !== id))
     }
 
 
