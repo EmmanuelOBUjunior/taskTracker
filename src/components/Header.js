@@ -1,9 +1,11 @@
+import Button from './Button'
 import PropTypes from 'prop-types';
 
 const Header = ({title}) => {
   return (
-	<header>
+	<header className='header'>
 		<h1>{title}</h1>
+		<Button/>
 	</header>
   )
 }
