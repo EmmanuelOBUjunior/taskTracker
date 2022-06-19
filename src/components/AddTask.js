@@ -7,8 +7,8 @@ const AddTask = (onAddTask) => {
 
 	const onSubmit = (e) =>{
 		e.preventDefault()
-		if(!text){
-			alert("Please fill in the Task inputs");
+		if(!text || !day){
+			alert("Please fill in the blank spaces");
 			return
 		}
 
