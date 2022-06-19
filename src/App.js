@@ -88,18 +88,17 @@ function App() {
   return (
     <Router>
     <div className="container">
+      
      <Header  onAdd = {() => setShowAddTasks(!showAddTasks)} showAdd = {showAddTasks}/>
-     <Routes>
-     <Route path = '/' exact render= {(props) =>{
-      <>
+      <Routes>
+      <Route path = '/' exact element = {<>
       {showAddTasks && <AddTask onAddTask = {addTask}/>}
-     {tasks.length > 0 ? <Tasks tasks = {tasks} onDelete = {deleteTask} onToggle= {toggleTask}/> : <h3>There is no task to show</h3>}
-      </>
-     }  
-     }/>
-     <Route path = '/about' component= {About}/>
-     </Routes>
+      {tasks.length > 0 ? <Tasks tasks = {tasks} onDelete = {deleteTask} onToggle= {toggleTask}/> : <h3>There is no task to show</h3>}
+      </>}/>
+      <Route path = 'about' element = {<About/>}/>
+      </Routes>
      <Footer/>
+    
     </div>
     </Router>
   );
